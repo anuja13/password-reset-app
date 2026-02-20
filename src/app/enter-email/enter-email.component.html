@@ -1,14 +1,14 @@
 <div class="container">
     <div class="card-body">
- 
+
       <!-- Show error message if email is not registered -->
-      <div *ngIf="!backendService.isEmailValid() && validationAttempted && submitted && !formInvalid" class="alert alert-danger">  
+      <div *ngIf="!backendService.isEmailValid() && validationAttempted && submitted && !formInvalid" class="alert alert-danger">
         Denne e-post adressen eller brukernavnet er ikke registrert hos oss. Vennligst skriv inn e-postadressen eller brukernavnet du er registrert med i SmaRTWork-prosjektet.
       </div>
-      
+
       <mat-card style="background-color: rgba(111, 143, 228, 0.1)">
-        <mat-card-title>Oppgi e-post adressen din eller brukernavn ditt for å få tilsendt et nytt passord:</mat-card-title>
-        
+        <mat-card-title>Oppgi e-postadressen din eller brukernavnet ditt for å få tilsendt et nytt passord:</mat-card-title>
+
         <mat-card-content>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
             <p>
@@ -27,10 +27,10 @@
             <div *ngIf="formInvalid" class="alert alert-warning">
               Du må oppgi enten e-post adresse eller brukernavn for å fortsette.
             </div>
-            <div *ngIf="!backendService.isEmailValid() && validationAttempted && submitted && !formInvalid" class="alert alert-danger">  
+            <div *ngIf="!backendService.isEmailValid() && validationAttempted && submitted && !formInvalid" class="alert alert-danger">
               Hvis du ikke husker hvilken e-post adresse som er registrert eller brukernavnet ditt kan du kontakte oss på <a href="mailto:smartwork@idi.ntnu.no?subject=SmarRTWork : Hjelp%20med%20brukernavn%20eller%20e-post">smartwork&#64;idi.ntnu.no.</a>
             </div>
-            
+
             <div class="button">
               <button type="submit" mat-raised-button class="submit-button" >Send nytt passord</button>
             </div>
@@ -41,8 +41,8 @@
   </div>
 
 
-<!--     
+<!--
 
-warning if they get either one wrong : Hvis du ikke husker hvilken e-post adresse som er registrert 
-eller brukernavnet ditt kan du kontakte oss på smartwork@idi.ntnu.no 
+warning if they get either one wrong : Hvis du ikke husker hvilken e-post adresse som er registrert
+eller brukernavnet ditt kan du kontakte oss på smartwork@idi.ntnu.no
  -->
